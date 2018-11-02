@@ -1,0 +1,24 @@
+//       Prefix Verb   URI Pattern                  Controller#Action
+//         root GET    /                            articles#index
+//     articles GET    /articles(.:format)          articles#index
+//              POST   /articles(.:format)          articles#create
+//  new_article GET    /articles/new(.:format)      articles#new
+// edit_article GET    /articles/:id/edit(.:format) articles#edit
+//      article GET    /articles/:id(.:format)      articles#show
+//              PATCH  /articles/:id(.:format)      articles#update
+//              PUT    /articles/:id(.:format)      articles#update
+//              DELETE /articles/:id(.:format)      articles#destroy
+
+ul
+  li= link_to '新規作成', new_article_path
+
+table.table
+  - if @articles.present?
+    - @articles.each do |article|
+      tr
+        td = article.title
+        td = article.body
+        td = link_to '編集', edit_article_path(article)
+        td = link_to '削除', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }
+  -else
+    p 記事がないよ
