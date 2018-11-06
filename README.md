@@ -1,6 +1,6 @@
 # README
 
-# TODO 
+# 第一回 
 * http methodって？
   * POSTするってなに？
   * GETするってなに？
@@ -15,8 +15,21 @@
   * APIの通信の流れ
   * ここでもルーティング
 
-# workshop
-* 検索をつくってみよう
+# 第二回 配列とhash
+
+# 第三回 MysqlとAR
+
+[問題ページ](https://docs.google.com/spreadsheets/d/1h1C22_dbR44hO_Yk7Z9wcFEvLJfYmB18M9zOY1ftMLI/edit#gid=1321190335)  
+SS(スプレッドシート)の「記述」の列は非表示にして、自分で考えてrails consoleで実行してください。  
+`例: $ Mac: Article.where(name: 'hoge')`
+
+わからなかったら解答を見てください。  
+解答を見ないで全部できるまで繰り返し復習してください。
+
+* ポイント 
+  * 検索したい対象によって主語がかわる。ユーザーを検索するならUser.where〜 記事を検索するなら Article.whereとなる。
+* 課題
+  * Article#indexで検索を実装してみよう！
 
 # 効率よく学習するには
 * メソッドの使い方がわからなかったら
