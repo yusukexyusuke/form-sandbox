@@ -47,6 +47,8 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    # nameとemailを受け取るように定義せよ！
+    # ↓↓↓↓↓解答はここから↓↓↓↓↓
+    # ↑↑↑↑↑解答はここまで↑↑↑↑↑
   end
 end
