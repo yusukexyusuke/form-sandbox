@@ -31,6 +31,16 @@ SS(スプレッドシート)の「記述」の列は非表示にして、自分�
 * 課題
   * Article#indexで検索を実装してみよう！
 
+# 第四回 関連について
+
+* [belongs_to関連付け](https://railsguides.jp/association_basics.html#belongs-to%E9%96%A2%E9%80%A3%E4%BB%98%E3%81%91)  
+* [has_one関連付け](https://railsguides.jp/association_basics.html#has-one%E9%96%A2%E9%80%A3%E4%BB%98%E3%81%91)  
+* [has_many関連付け](https://railsguides.jp/association_basics.html#has-many%E9%96%A2%E9%80%A3%E4%BB%98%E3%81%91)  
+
+このリンクの部分を図をよく見ながら理解してください。
+
+[問題](https://docs.google.com/spreadsheets/d/1h1C22_dbR44hO_Yk7Z9wcFEvLJfYmB18M9zOY1ftMLI/edit#gid=23860854)
+
 # 効率よく学習するには
 * メソッドの使い方がわからなかったら
   * リファレンスをみる https://api.rubyonrails.org/
