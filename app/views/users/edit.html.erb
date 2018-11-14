@@ -5,10 +5,16 @@
 
 
       <%= form_for @user do |f| %>
-        <p>HTMLで名前(name)とメール(email)をpostできるinputフィールドを作成せよ！</p>
-        <p>↓↓↓↓↓解答はここから↓↓↓↓↓</p>
+        <div class="form-group">
+          <label for="name">名前</label>
+          <input type="text" id="title" name="user[name]">
+        </div>
 
-        <p>↑↑↑↑↑解答はここまで↑↑↑↑↑</p>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="user[email]">
+        </div>
+
         <%= f.submit '保存' %>
       <% end %>
 

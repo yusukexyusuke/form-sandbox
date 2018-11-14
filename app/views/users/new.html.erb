@@ -6,10 +6,10 @@
       <%= form_for @user do |f| %>
         <p>HTMLで名前(name)とメール(email)をpostできるinputフィールドを作成せよ！</p>
         <p>↓↓↓↓↓解答はここから↓↓↓↓↓</p>
-         <%= f.label :名前 %>
-         <%= f.text_field :name, class: 'form-control', placeholder: '名前を入力してください' %>
-         <%= f.label :メール %>
-         <%= f.text_field :email, class: 'form-control', placeholder: 'メールを入力してください' %>
+        <p>名前</p>
+        <input type="name" name="user[name]"　type="text">
+        <p>メールアドレス</p>
+        <input type="name" name="user[email]"　type="text">
         <p>↑↑↑↑↑解答はここまで↑↑↑↑↑</p>
         <%= f.submit '登録' %>
       <% end %>
