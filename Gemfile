@@ -19,6 +19,8 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'slim-rails'
+gem 'bootstrap'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -34,6 +36,13 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # pry
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
+
+  gem 'annotate'
 end
 
 group :development do
@@ -43,6 +52,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # debug
+  gem 'better_errors' # エラー画面をわかりやすく整形してくれる
+  gem 'binding_of_caller' # better_errorsの画面上にirb/pry(PERL)を表示する
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
