@@ -1,6 +1,10 @@
-# README
-
 [wiki](https://github.com/yusukexyusuke/form-sandbox/wiki)にも色々書いてるので目を通してください！
+
+# 開発環境
+Cloud9を利用します。
+
+* Cloud9 設定方法は[こちら](https://dotinstall.com/lessons/basic_c9_v2)
+  * Cloud9に関するTipsは[こちら](https://github.com/yusukexyusuke/form-sandbox/wiki/Cloud9)
 
 # 初期設定
 
@@ -20,9 +24,9 @@ $ rails db:migrate:reset
 # 復習シートの使い方
 
 ## 配列とhash
-配列とhashはとても頻繁にプログラムで登場します。
-このシートの表を配列やhashに変換できるように訓練してください。
-また作った配列やhashの中身に自在にアクセス出来るようになってください。
+配列とhashはとても頻繁にプログラムで登場します。 
+このシートの表を配列やhashに変換できるように訓練してください。 
+また作った配列やhashの中身に自在にアクセス出来るようになってください。 
 
 配列とhashを制するものはプログラムを制すると言っても過言ではないと思います。
 
