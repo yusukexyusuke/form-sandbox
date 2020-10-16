@@ -15,9 +15,10 @@ class ArticlesController < ApplicationController
   def edit # http methodが"GET"の場合、editアクションにルーティングされる。
   end
 
-  def create # http methodが"POST"の場合、destroyアクションにルーティングされる。
+  def create # http methodが"POST"の場合、createアクションにルーティングされる。
     # binding.pry # こいつをつかって処理をとめてparamsの中身を確認する。
     @article = Article.new(article_params)
+    @article.user = User.all.sample
     if @article.save
       redirect_to articles_path, notice: '作成したよ'
     else
@@ -25,7 +26,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def update # http methodが"PATCH"の場合、destroyアクションにルーティングされる。
+  def update # http methodが"PATCH"の場合、updateアクションにルーティングされる。
     # binding.pry # こいつをつかって処理をとめてparamsの中身を確認する。
     if @article.update(article_params)
       redirect_to articles_path, notice: '更新したよ'

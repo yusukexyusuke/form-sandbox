@@ -1,5 +1,5 @@
-<%= form_for @article, url: articles_path, method: :post do |f|
-  # urlとmethodはrailsの規約に沿っていれば省略できる。 %>>
+<%= form_with model: @article, url: articles_path, method: :post, local: true do |f| %>
+  <!-- urlとmethodはrailsの規約に沿っていれば省略できる。 -->
   <h2>HTMLをつかう</h2>
   <div class="form-group">
     <label for="title">タイトル</label>
@@ -21,16 +21,13 @@
   -->
   <div class="form-group">
     <%= f.label :title, class: 'form-label' %>
-
-    <!-- 第2引数に指定するとラベル名を上書きできる-->
-    <%= f.label :title, 'タイトルだよ', class: 'form-label' %>
+    <%= f.label :title, 'タイトルだよ', class: 'form-label' %><!-- 第2引数に指定するとラベル名を上書きできる-->
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
 
   <div class="form-group">
     <%= f.label :body, class: 'form-label' %>
-    <!-- 第2引数に指定するとラベル名を上書きできる-->
-    <%= f.label :body, '本文だよ', class: 'form-label' %>
-    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.label :body, '本文だよ', class: 'form-label' %><!-- 第2引数に指定するとラベル名を上書きできる-->
     <%= f.text_area :body, class: 'form-control' %>
   </div>
 
@@ -57,7 +54,7 @@
 
   <div class="form-group">
     <!-- 第二引数がラベル名になる。I18nを設定してると日本になる-->
-    <= label :article, :body, class: 'form-label'% %>
+    <%= label :article, :body, class: 'form-label' %>
 
     <!-- 第三引数に指定するとラベル名を上書きできる-->
     <%= label :article, :body, '本文だよ', class: 'form-label' %>
@@ -87,14 +84,16 @@
     <%= label_tag 'article[body]', '本文(省略不可)', class: 'form-label' %>
 
     <!-- # {:class=>"form-label"}がlabel名として認識されてしまう-->
-    <%= label_tag 'article[body]', class: 'form-label' %>>
+    <%= label_tag 'article[body]', class: 'form-label' %>
 
     <!-- 第二引数にいれると<textarea></textarea>に本文が入力された状態になる-->
-    <%= text_area_tag 'article[body]', '本文が入力された状態になる', class: 'form-control' %>>
+    <%= text_area_tag 'article[body]', '本文が入力された状態になる', class: 'form-control' %>
   </div>
 
-  <%= f.submit '保存' %>>
-<% end %>>
+  <input type="text" name="hoge">
+  <input type="text" name="article[hoge]">
+  <%= f.submit '保存' %>
+<% end %>
 
 <style>
   label {
