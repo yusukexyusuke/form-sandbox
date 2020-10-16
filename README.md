@@ -23,6 +23,11 @@ $ rails db:migrate:reset
 
 # 復習シートの使い方
 
+[こちら](https://docs.google.com/spreadsheets/d/1w5kdc4SiXzVFVJJawQrtdEzd2qeTaFWCkLTebQ0nOmI/edit#gid=0)のシートをコピーして使用してください。
+
+### コピーの仕方
+[ファイル] -> [コピーを作成]
+
 ## 配列とhash
 配列とhashはとても頻繁にプログラムで登場します。  
 このシートの表を配列やhashに変換できるように訓練してください。  
@@ -34,7 +39,7 @@ $ rails db:migrate:reset
 こちらもとても頻繁に登場します。  
 「xxxxという条件で処理を行いたい」というときにif文章を書くことになりますが、  
 その際に頻繁に必要になります。
-10個たらずなので全部頭にいれておいてください。
+10個たらずなので全部頭にいれておいてください。  
 (使い方や書き方は完全に頭にいれなくても大丈夫です。「こういうメソッドが使える」と思いつくことが大事です。)
 
 
@@ -42,8 +47,8 @@ $ rails db:migrate:reset
 [HTTPリクエスト](https://wa3.i-3-i.info/word1841.html)
 [HTTPメソッド(CRUD)についてまとめた](https://qiita.com/fukulingo/items/a9e8d18467fe3e04068e)
 
-上記の記事を読みふんわりでいいので理解しておいてください。
-POST GET DELETE PUTはRailsのなかで頻繁に登場しますので、
+上記の記事を読みふんわりでいいので理解しておいてください。  
+POST GET DELETE PUTはRailsのなかで頻繁に登場しますので、  
 ここを理解しているとFormの部分の理解がとてもスムーズになります。
 
 ## ActiveRecord
