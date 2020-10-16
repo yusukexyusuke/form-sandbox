@@ -1,25 +1,49 @@
 # README
 
-# 第一回 
-* http methodって？
-  * POSTするってなに？
-  * GETするってなに？
-  * Railsのルーティングについて
-  * http medhodとurlによって判定し、適切なアクションに処理を振り分ける
-* form_forとHTML
-  * form_forはHTMLをお手軽に構成してくれる便利メソッド
-  * ブラウザはHTMLしか理解できないので、最終的に必要になるのはHTML
-  * form_forto form_tagの違い
-      * https://qiita.com/shunsuke227ono/items/7accec12eef6d89b0aa9
-* APIって？
-  * APIの通信の流れ
-  * ここでもルーティング
+[wiki](https://github.com/yusukexyusuke/form-sandbox/wiki)にも色々書いてるので目を通してください！
 
-# 第二回 配列とhash
+# 初期設定
 
-# 第三回 MysqlとAR
+```
+$ bundle install # Gemfileに記載されているGemをインストール
+$ rails db:migrate # DBの初期設定
+$ rails db:seed # 初期データの投入
+$ rails s # サーバー起動
+```
 
-[問題ページ](https://docs.google.com/spreadsheets/d/1h1C22_dbR44hO_Yk7Z9wcFEvLJfYmB18M9zOY1ftMLI/edit#gid=1321190335)  
+## DBをリセットしたい場合
+```
+$ rails db:reset
+$ rails db:migrate:reset
+```
+
+# 復習シートの使い方
+
+## 配列とhash
+配列とhashはとても頻繁にプログラムで登場します。
+このシートの表を配列やhashに変換できるように訓練してください。
+また作った配列やhashの中身に自在にアクセス出来るようになってください。
+
+配列とhashを制するものはプログラムを制すると言っても過言ではないと思います。
+
+## よくつかう判定メソッド
+こちらもとても頻繁に登場します。
+「xxxxという条件で処理を行いたい」というときにif文章を書くことになりますが、
+その際に頻繁に必要になります。
+10個たらずなので全部頭にいれておいてください。
+(使い方や書き方は完全に頭にいれなくても大丈夫です。「こういうメソッドが使える」と思いつくことが大事です。)
+
+
+## ルーティングとHTTPメソッド
+[HTTPリクエスト](https://wa3.i-3-i.info/word1841.html)
+[HTTPメソッド(CRUD)についてまとめた](https://qiita.com/fukulingo/items/a9e8d18467fe3e04068e)
+
+上記の記事を読みふんわりでいいので理解しておいてください。
+POST GET DELETE PUTはRailsのなかで頻繁に登場しますので、
+ここを理解しているとFormの部分の理解がとてもスムーズになります。
+
+## ActiveRecord
+
 SS(スプレッドシート)の「記述」の列は非表示にして、自分で考えてrails consoleで実行してください。  
 `例: $ Mac: Article.where(name: 'hoge')`
 
@@ -28,10 +52,8 @@ SS(スプレッドシート)の「記述」の列は非表示にして、自分�
 
 * ポイント 
   * 検索したい対象によって主語がかわる。ユーザーを検索するならUser.where〜 記事を検索するなら Article.whereとなる。
-* 課題
-  * Article#indexで検索を実装してみよう！
 
-# 第四回 関連について
+## 関連について
 
 * [belongs_to関連付け](https://railsguides.jp/association_basics.html#belongs-to%E9%96%A2%E9%80%A3%E4%BB%98%E3%81%91)  
 * [has_one関連付け](https://railsguides.jp/association_basics.html#has-one%E9%96%A2%E9%80%A3%E4%BB%98%E3%81%91)  
@@ -39,9 +61,6 @@ SS(スプレッドシート)の「記述」の列は非表示にして、自分�
 
 このリンクの部分を図をよく見ながら理解してください。
 
-[問題](https://docs.google.com/spreadsheets/d/1h1C22_dbR44hO_Yk7Z9wcFEvLJfYmB18M9zOY1ftMLI/edit#gid=23860854)
-
 # 効率よく学習するには
 * メソッドの使い方がわからなかったら
   * リファレンスをみる https://api.rubyonrails.org/
-  * atomでメソッドの定義元にジャンプ
