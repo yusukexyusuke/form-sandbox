@@ -23,7 +23,7 @@
               <tr>
                 <td><%= article.title %></td>
                 <td><%= article.body %></td>
-                <td><%= link_to '編集', edit_article_path(article), class: 'btn btn-primary' %></td>
+                <td><%= link_to 'Edit', edit_article_path(article), class: 'btn btn-primary' %></td>
                 <td><%= link_to '削除', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
               </tr>
             <% end %>
