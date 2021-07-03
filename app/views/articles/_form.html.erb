@@ -1,114 +1,106 @@
-<div style="padding: 30px;">
-  <%= form_with model: @article, url: articles_path, method: :post, local: true do |f| %>
-    <!-- urlとmethodはrailsの規約に沿っていれば省略できる。 -->
-    <h2>HTMLをつかう</h2>
-    <div class="form-group">
-      <label for="title">タイトル</label>
-      <input type="text" id="title" name="article[title]" class="form-control">
+<div class="container py-5">
+  <div class="card mb-5">
+    <div class="card-body">
+      <div class="card-title">
+        <h2>HTMLをつかう</h2>
+      </div>
+      <div class="card-text">
+        <%#= form_with model: @article, url: articles_path, method: :post, local: true do |f| %>
+        <%= form_with model: @article, local: true do |f| %>
+          <!-- urlとmethodはrailsの規約に沿っていれば省略できる。 -->
+          <div class="form-group">
+            <label for="title">タイトル</label>
+            <input type="text" id="title" name="article[title]" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="body">本文</label>
+            <textarea id="body" name="article[body]" class="form-control"></textarea>
+          </div>
+          <p>上のform_for（railsのヘルパーメソッド）を使うと記述量が激減して便利</p>
+          <%= f.submit '保存', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
     </div>
+  </div>
 
-    <div class="form-group">
-      <label for="body">本文</label>
-      <textarea id="body" name="article[body]" class="form-control"></textarea>
+  <div class="card mb-5">
+    <div class="card-body">
+      <div class="card-title">
+        <h2>form_withをつかう</h2>
+      </div>
+      <div class="card-text">
+        <%= form_with model: @article, local: true do |f| %>
+          <div class="form-group">
+            <%= f.label :title, class: 'form-label' %>
+            <%= f.text_field :title, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :body, class: 'form-label' %>
+            <%= f.text_area :body, class: 'form-control' %>
+          </div>
+          <%= f.submit '保存', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
     </div>
-    <p>上のform_for（railsのヘルパーメソッド）を使うと記述量が激減して便利</p>
+  </div>
 
-    <hr>
+  <div class="card mb-5">
+    <div class="card-body">
+      <div class="card-title">
+        <h2>form_withたけどf.をつかわない</h2>
+      </div>
+      <div class="card-text">
+        <%= form_with model: @article, local: true do |f| %>
+          <div class="form-group">
+            <!-- 第二引数がラベル名になる。I18nを設定してると日本語になる-->
+            <%= label :article, :title, class: 'form-label' %>
 
-    <h2>form_forをつかう</h2>
-    <!--
-      FormBuilderクラス
-      def label(method, text = nil, options = {}, &block)
-        @template.label(@object_name, method, text, objectify_options(options), &block)
-      end
-    -->
-    <div class="form-group">
-      <%= f.label :title, class: 'form-label' %>
-      <%= f.label :title, 'タイトルだよ', class: 'form-label' %><!-- 第2引数に指定するとラベル名を上書きできる-->
-      <%= f.text_field :title, class: 'form-control' %>
+            <%= text_field :article, :title, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <!-- 第二引数がラベル名になる。I18nを設定してると日本になる-->
+            <%= label :article, :body, class: 'form-label' %>
+
+            <%= text_area :article, :body, class: 'form-control' %>
+          </div>
+          <%= f.submit '保存', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
     </div>
+  </div>
 
-    <div class="form-group">
-      <%= f.label :body, class: 'form-label' %>
-      <%= f.label :body, '本文だよ', class: 'form-label' %><!-- 第2引数に指定するとラベル名を上書きできる-->
-      <%= f.text_area :body, class: 'form-control' %>
+  <div class="card mb-5">
+    <div class="card-body">
+      <div class="card-title">
+        <h2>tag系</h2>
+      </div>
+      <div class="card-text">
+        <%= form_tag articles_path do %>
+          <div class="form-group">
+            <!-- 第2引数がラベル名になる-->
+            <%= label_tag 'article[title]', 'タイトル(省略不可)', class: 'form-label' %>
+            <%= text_field_tag 'article[title]', '', class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <!-- 第2引数がラベル名になる-->
+            <%= label_tag 'article[body]', '本文(省略不可)', class: 'form-label' %>
+            <%= text_area_tag 'article[body]', '', class: 'form-control' %>
+          </div>
+
+          <%= submit_tag '保存', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
     </div>
-
-    <hr>
-
-    <h2>form_forたけどf.をつかわない</h2>
-    <!--
-      FormHelperクラス
-      def label(object_name, method, content_or_options = nil, options = nil, &block)
-        Tags::Label.new(object_name, method, self, content_or_options, options).render(&block)
-      end
-      label(object_name, method, content_or_options = nil, options = nil, &block)
-    
-      text_field(object_name, method, options = {})
-      text_area(object_name, method, options = {})
-    -->
-    <div class="form-group">
-      <!-- 第二引数がラベル名になる。I18nを設定してると日本語になる-->
-      <%= label :article, :title, class: 'form-label' %>
-
-      <!-- 第三引数に指定するとラベル名を上書きできる-->
-      <%= label :article, :title, 'タイトルだよ', class: 'form-label' %>
-
-      <%= text_field :article, :title, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <!-- 第二引数がラベル名になる。I18nを設定してると日本になる-->
-      <%= label :article, :body, class: 'form-label' %>
-
-      <!-- 第三引数に指定するとラベル名を上書きできる-->
-      <%= label :article, :body, '本文だよ', class: 'form-label' %>
-
-      <%= text_area :article, :body, class: 'form-control' %>
-    </div>
-    <hr>
-
-    <hr>
-
-    <h2> tag系</h2>
-    <!--
-     label_tag(name = nil, content_or_options = nil, options = nil, &block)
-     text_field_tag(name, value = nil, options = {})
-     text_area_tag(name, content = nil, options = {})
-    -->
-    <div class="form-group">
-      <!-- 第2引数がラベル名になる-->
-      <%= label_tag 'article[title]', 'タイトル(省略不可)', class: 'form-label' %>
-
-      <!-- {:class=>"form-label"}がlabel名として認識されてしまう-->
-      <%= label_tag 'article[title]', class: 'form-label' %>
-
-      <%= text_field_tag 'article[title]', '', class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <!-- 第2引数がラベル名になる-->
-      <%= label_tag 'article[body]', '本文(省略不可)', class: 'form-label' %>
-
-      <!-- # {:class=>"form-label"}がlabel名として認識されてしまう-->
-      <%= label_tag 'article[body]', class: 'form-label' %>
-
-      <!-- 第二引数にいれると<textarea></textarea>に本文が入力された状態になる-->
-      <%= text_area_tag 'article[body]', '本文が入力された状態になる', class: 'form-control' %>
-    </div>
-
-    <input type="text" name="hoge">
-    <input type="text" name="article[hoge]">
-    <%= f.submit '保存' %>
-  <% end %>
+  </div>
 </div>
 
 <style>
   label {
     display: block;
     font-weight: bold;
-  }
-  hr {
-    margin: 60px 0 !important;
   }
 </style>
