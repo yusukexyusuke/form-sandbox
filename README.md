@@ -1,18 +1,12 @@
 [wiki](https://github.com/yusukexyusuke/form-sandbox/wiki)にも色々書いてるので目を通してください！
 
-# 開発環境
-Cloud9を利用します。
-
-* Cloud9 設定方法は[こちら](https://dotinstall.com/lessons/basic_c9_v2)
-  * Cloud9に関するTipsは[こちら](https://github.com/yusukexyusuke/form-sandbox/wiki/Cloud9)
-
 # 初期設定
 
 ```
-$ bundle install # Gemfileに記載されているGemをインストール
-$ rails db:migrate # DBの初期設定
-$ rails db:seed # 初期データの投入
-$ rails s # サーバー起動
+$ bundle install --path vendor/bundle # Gemfileに記載されているGemをインストール
+$ bundle exec rails db:migrate # DBの初期設定
+$ bundle exec rails db:seed # 初期データの投入
+$ bundle exec rails s # サーバー起動
 ```
 
 ## DBをリセットしたい場合
@@ -41,7 +35,6 @@ $ rails db:migrate:reset
 その際に頻繁に必要になります。
 10個たらずなので全部頭にいれておいてください。  
 (使い方や書き方は完全に頭にいれなくても大丈夫です。「こういうメソッドが使える」と思いつくことが大事です。)
-
 
 ## ルーティングとHTTPメソッド
 [HTTPリクエスト](https://wa3.i-3-i.info/word1841.html)
@@ -73,3 +66,9 @@ SS(スプレッドシート)の「記述」の列は非表示にして、自分�
 # 効率よく学習するには
 * メソッドの使い方がわからなかったら
   * リファレンスをみる https://api.rubyonrails.org/
+
+# 参考
+Cloud9を利用する場合
+
+* Cloud9 設定方法は[こちら](https://dotinstall.com/lessons/basic_c9_v2)
+  * Cloud9に関するTipsは[こちら](https://github.com/yusukexyusuke/form-sandbox/wiki/Cloud9)
